@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
-    "start": "cross-env NODE_ENV production node backend/index.js"
+    "dev": "cross-env NODE_ENV=development nodemon backend/index.js --ignore frontend",
+    "start": "cross-env NODE_ENV production node backend/index.js",
+    "build": "cross-env NODE_ENV=production webpack",
+    "server:dev": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +23,15 @@
   },
   "description": "APP FullStack en mongo-node-express-javascript-html-css (backend y frontend)\r Es un proyecto basico para entender la integracion del backend y el frontend",
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "css-loader": "^6.4.0",
+    "html-webpack-plugin": "^5.4.0",
+    "mini-css-extract-plugin": "^2.4.2",
+    "nodemon": "^2.0.13",
+    "style-loader": "^3.3.0",
+    "timeago.js": "^4.0.2",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
   },
   "repository": {
     "type": "git",
