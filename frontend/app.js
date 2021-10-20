@@ -1,6 +1,10 @@
 import './styles/app.css';
+import UI from './UI';
 
-import BookService from './services/BookService';
+document.addEventListener('DOMContentloaded',() => {
+        const ui = new UI();
+        ui.renderBooks();
+});
 
 document.getElementById('book-form')
     .addEventListener('submit', e => {
@@ -15,8 +19,12 @@ document.getElementById('book-form')
         formData.append('author', author);
         formData.append('isbn', isbn);
 
+        const ui = new UI();
+        ui.addANewBook(formData);
+
+
         // console.log(title, author, isbn, image);
-        const bookServices = new BookService()
+        const bookService = new BookService()
             bookService.postBook(formData)
 
         e.preventDefault();
